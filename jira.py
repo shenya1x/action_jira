@@ -119,6 +119,7 @@ def main():
         field_args.setdefault('customfield_14623', {})["value"] = "Development"
 
     if args.project == "CRJ":
+        field_args.setdefault('priority', {})["name"] = args.priority
         field_args.setdefault('components', []).extend([{'name': c} for c in args.components or []])
         field_args.setdefault('labels', []).extend(args.labels)
 
