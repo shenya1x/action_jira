@@ -107,7 +107,7 @@ def main():
     field_args.setdefault('project', {})["key"] = args.project
     field_args.setdefault('issuetype', {})["name"] = args.issuetype
     field_args.setdefault('summary', args.summary)
-    field_args.setdefault('description', args.summary)
+    field_args.setdefault('description', args.description)
 
     if args.project == "OAM":
         field_args.setdefault('components', []).extend([{'name': c} for c in args.components or []])
