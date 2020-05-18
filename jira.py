@@ -121,7 +121,7 @@ def main():
     if args.project == "CRJ":
         field_args.setdefault('priority', {})["name"] = args.priority
         field_args.setdefault('components', []).extend([{'name': c} for c in args.components or []])
-        field_args.setdefault('labels', []).extend(args.labels)
+        field_args.setdefault('labels', []).extend(args.labels or [])
 
     print(field_args)
     jira = Jira(args.server, args.user, args.password)
