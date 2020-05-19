@@ -126,7 +126,7 @@ def main():
     jira = Jira(args.server, args.user, args.password)
     status, body = jira.createOneIssue(fieldArgs=field_args, updateArgs={})
     if status == 'success':
-        print('successfully created jira')
+        print('Successfully created jira')
         print(body)
         sys.exit(0)
     else:
