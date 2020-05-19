@@ -123,7 +123,6 @@ def main():
         field_args.setdefault('components', []).extend([{'name': c} for c in args.components or []])
         field_args.setdefault('labels', []).extend(args.labels or [])
 
-    print(field_args)
     jira = Jira(args.server, args.user, args.password)
     status, body = jira.createOneIssue(fieldArgs=field_args, updateArgs={})
     if status == 'success':
