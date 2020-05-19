@@ -111,7 +111,7 @@ def main():
 
     if args.project == "OAM":
         field_args.setdefault('components', []).extend([{'name': c} for c in args.components or []])
-        field_args.setdefault('versions', []).extend([{'name': c} for c in args.versions or []])
+        field_args.setdefault('versions', []).extend([{'name': c} for c in args.versions or ['O-MR0-Maint']])
         field_args.setdefault('priority', {})["name"] = args.priority
         field_args.setdefault('customfield_15101', {})["value"] = "Free Testing"
         field_args.setdefault('customfield_14617', 'Integration Tests')
