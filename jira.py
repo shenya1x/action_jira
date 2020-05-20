@@ -1,4 +1,5 @@
 import sys
+import time
 import json
 import argparse
 import requests
@@ -124,7 +125,16 @@ def main():
         field_args.setdefault('labels', []).extend(args.labels or [])
 
     jira = Jira(args.server, args.user, args.password)
-    status, body = jira.createOneIssue(fieldArgs=field_args, updateArgs={})
+
+    for i in range(3):
+        status, body = jira.createOneIssue(fieldArgs=field_args, updateArgs={})
+        if status == 'success':
+            break
+        else:
+            print('Retrying for the {} time'.format(i+1))
+            time.sleep(15)
+            continue
+
     if status == 'success':
         print('Successfully created jira')
         print(body)
