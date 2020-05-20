@@ -132,7 +132,7 @@ def main():
             break
         else:
             print('Retrying for the {} time'.format(i+1))
-            time.sleep(15)
+            time.sleep(10)
             continue
 
     if status == 'success':
